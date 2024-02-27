@@ -1,0 +1,28 @@
+[repository]
+    images-path = "../data/images"
+
+[sqlite]
+    db-path = "../data/repository.db"
+
+[etcd]
+    endpoints = ["loalhost:2379"]
+
+[log]
+    disable-timestamp = false
+    level = "info"
+    maxsize = "100"
+    max-days = 90
+    max-backups = 180
+    compress = true
+    file-dir = "../var/log"
+
+[server]
+    grpc-address-list = ["0.0.0.0","::"]
+    grpc-port = 50001
+
+    http-address-list = ["0.0.0.0","::"]
+    http-port = 50002
+
+    tls-ca-file = "../etc/certs/ca.crt"
+    tls-server-cert = "../var/certs/server.crt"
+    tls-server-pem = "../var/certs/server.pem"
